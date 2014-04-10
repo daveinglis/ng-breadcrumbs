@@ -15,11 +15,9 @@ angular
         if (this.options) {
           for (var key in this.options) {
             if (this.options.hasOwnProperty(key)) {
-              for (var breadcrumb in this.breadcrumbs) {
-                if (this.breadcrumbs.hasOwnProperty(breadcrumb)) {
-                  if (breadcrumb.label === key) {
-                    this.breadcrumbs[breadcrumb].label = this.options[key];
-                  }
+              for (var i = 0; i < this.breadcrumbs.length; i++) {
+                if (this.breadcrumbs[i].label === key) {
+                  this.breadcrumbs[i].label = this.options[key];
                 }
               }
             }
